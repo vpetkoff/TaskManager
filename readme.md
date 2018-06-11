@@ -9,11 +9,15 @@
 
 ## Basic setup
 
-This project uses sqlite engine initially. If you wish to use other database, switch to it according to the Laravel docs.
+This project initially uses sqlite database. If you wish to use other database, switch to it according to the Laravel docs.
 
- - Make new file TaskManager/database/database.sqlite to represent the sqlite database
+ - Clone this repo and cd to TaskManager directory
+ - Run 'composer update' to download all needed packages
+ - Generate new application encryption key with 'php artisan key:generate'
+ - Make a new file TaskManager/database/database.sqlite to represent the sqlite database
+ - Copy .env.example to .env and make sure DB_CONNECTION=sqlite and DB_DATABASE=<yourdir>/TaskManager/database/database.sqlite
  - Make migrations with 'php artisan migrate' to create the needed database tables
- - Configure your web server to serve TaskManager/public directory as Document root
+ - Configure your web server to serve TaskManager/public directory as Document root or run 'php artisan serv' for a local development web server
  - Enjoy
 
 ## About Laravel
