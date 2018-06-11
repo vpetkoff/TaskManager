@@ -7,6 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Basic setup
+
+This project uses sqlite engine initially. If you wish to use other database, switch to it according to the Laravel docs.
+
+ - Make new file TaskManager/database/database.sqlite to represent the sqlite database
+ - Make migrations with 'php artisan migrate' to create the needed database tables
+ - Configure your web server to serve TaskManager/public directory as Document root
+ - Enjoy
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
