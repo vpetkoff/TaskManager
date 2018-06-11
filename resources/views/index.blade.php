@@ -4,11 +4,11 @@
 
   @foreach ($tasks as $task)
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 bg-light" style="margin-bottom:20px; padding-top:15px;">
         <p>{{ $task->body }}</p>
-        <p>{{ $task->author }}</p>
-        <p>{{ $task->created_at }}</p>
-        <p>{{ $task->updated_at }}</p>
+        <p>Author: {{ $task->author }}</p>
+        <p>Created: {{ $task->created_at }}</p>
+        <p>Last update: {{ $task->updated_at }}</p>
     </div>
   </div>
   @endforeach

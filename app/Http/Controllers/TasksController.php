@@ -14,7 +14,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Tasks::all();
+        $tasks = Tasks::all()->sortByDesc('created_at');
 
         return view('index', compact('tasks'));
     }
@@ -26,7 +26,7 @@ class TasksController extends Controller
      */
     public function create()
     {
-        //
+        return view('tasks.create');
     }
 
     /**
@@ -37,7 +37,14 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $task = new Tasks;
+
+        $task->body = $request->taskCreateArea;
+        $task->author = $request->taskCreateAuthor;
+
+        $task->save();
+
+        return redirect('/')->with('msg', "TASK SUCCESSFULLY CREATED");
     }
 
     /**
