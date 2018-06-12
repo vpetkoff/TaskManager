@@ -2,6 +2,18 @@
 
 @section('content')
   <div class="row">
+
+    <!-- Monitor for validation errors -->
+    @if (count($errors) > 0)
+      <div class = "alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+
     <div class="col-md-12">
       <h5>Create task</h5>
       <form method="POST" action="{{ url('tasks/create') }}">

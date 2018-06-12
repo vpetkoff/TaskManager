@@ -37,6 +37,14 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+
+        // Validate the request values which
+        // we got from the creation form
+        $this->validate($request,[
+          'taskCreateArea'=>'required|max:1000',
+          'taskCreateAuthor'=>'required'
+        ]);
+
         $task = new Tasks;
 
         $task->body = $request->taskCreateArea;
@@ -45,6 +53,7 @@ class TasksController extends Controller
         $task->save();
 
         return redirect('/')->with('msg', "TASK SUCCESSFULLY CREATED");
+
     }
 
     /**
