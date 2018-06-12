@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-12">
       <h5>Create task</h5>
-      <form method="POST" action="/tasks/create">
+      <form method="POST" action="{{ url('tasks/create') }}">
         @csrf
         <div class="form-group">
           <textarea class="form-control" name="taskCreateArea" rows="3" placeholder="Enter task text"></textarea>

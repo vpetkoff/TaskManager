@@ -10,7 +10,7 @@
         <p>Last update: {{ $task->updated_at }}</p>
         <div class="row">
           <a href="/" class="btn btn-secondary" style="margin-right:2px;">Back to Home</a>
-          <form method="POST" action="/tasks/delete/{{ $task->id }}">
+          <form method="POST" action={{ url("tasks/delete/$task->id") }}>
             @csrf
             <input class="btn btn-secondary" type="submit" value="Delete">
           </form>
