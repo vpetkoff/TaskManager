@@ -13,6 +13,7 @@
           <a href="/tasks/{{ $task->id }}" class="btn btn-secondary" style="margin-right:2px;">Read more</a>
           <form method="POST" action={{ url("tasks/delete/$task->id") }}>
             @csrf
+            @method('DELETE')
             <input class="btn btn-secondary" type="submit" value="Delete">
           </form>
         </div>

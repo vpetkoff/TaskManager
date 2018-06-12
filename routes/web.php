@@ -28,8 +28,8 @@ Route::prefix('tasks')->group(function () {
   Route::get('/edit/{id}', 'TasksController@edit');
 
   // Update a single task with ID
-  Route::post('/update/{id}', 'TasksController@update');
+  Route::put('/update/{id}', 'TasksController@update');
 
   // Delete a single task with ID
-  Route::post('/delete/{id}', 'TasksController@destroy');
+  Route::delete('/delete/{id}', 'TasksController@destroy');
 });
