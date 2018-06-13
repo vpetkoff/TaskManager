@@ -43,12 +43,14 @@ class TasksController extends Controller
         $this->validate($request,[
           'taskCreateArea'=>'required|max:1000',
           'taskCreateAuthor'=>'required|max:20'
+          // Validators for task status to be added
         ]);
 
         $task = new Tasks;
 
         $task->body = $request->taskCreateArea;
         $task->author = $request->taskCreateAuthor;
+        $task->status = $request->taskStatus;
 
         $task->save();
 
@@ -96,12 +98,14 @@ class TasksController extends Controller
         $this->validate($request,[
           'taskEditArea'=>'required|max:1000',
           'taskEditAuthor'=>'required|max:20'
+          // Validation for task status to be added
         ]);
 
         $task = Tasks::findOrFail($id);
 
         $task->body = $request->taskEditArea;
         $task->author = $request->taskEditAuthor;
+        $task->status = $request->taskStatus;
 
         $task->save();
 

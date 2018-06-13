@@ -20,8 +20,16 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-          <textarea class="form-control" name="taskEditArea" rows="3">{{ $task->body }}</textarea>
-          <input type="text" class="form-control" name="taskEditAuthor" value="{{ $task->author }}">
+          <textarea style="margin-bottom:5px;" class="form-control" name="taskEditArea" rows="3">{{ $task->body }}</textarea>
+          <input style="margin-bottom:5px;" type="text" class="form-control" name="taskEditAuthor" value="{{ $task->author }}">
+          <select name="taskStatus" class="form-control">
+            selected="selected"
+            <option selected="selected" value="{{ $task->status }}">{{ $task->status }}</option>
+            <option value="New">New</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
         </div>
         <input class="btn btn-light" type="submit" value="Submit">
       </form>
