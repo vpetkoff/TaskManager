@@ -33,3 +33,7 @@ Route::prefix('tasks')->group(function () {
   // Delete a single task with ID
   Route::delete('/delete/{id}', 'TasksController@destroy');
 });
+
+Route::get('/about', function () {
+  return view('about');
+});
